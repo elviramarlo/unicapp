@@ -1,0 +1,19 @@
+{
+  "name": "unicapp-electronapp",
+  "version": "1.0.0",
+  "description": "unicapp",
+  "main": "main.js",
+  "scripts": {
+    "test": "testt",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "unicapp.git"
+  },
+  "author": "elvira",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.3"
+  }
+}
