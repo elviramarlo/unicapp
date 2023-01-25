@@ -3,18 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <title>Hello from Electron renderer!</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Unicapp</title>
   </head>
   <body>
-    <h1>Adri guapísimo te quiero!</h1>
-    <p>👋</p>
+	<!-- Todo el div "menu" es para el menú desplegable -->
+	<div class="menu">
+		<p>MENU</p>
+		<div id="header">
+			<ul class="nav">
+				<li><a href="">GENERAL</a>
+					<ul>
+						<li><a href="">DOCUMENTACIÓ</a></li>
+						<li><a href="">UTILITATS AMES</a></li>
+						<li><a href="">UTILITATS WINDOWS</a></li>
+						<li><a href="">LANZAPPS</a></li>
+					</ul>
+				</li>
+				<li><a href="">MECÀNICS</a>
+					<ul>
+						<li><a href="">DOCUMENTACIÓ</a></li>
+						<li><a href="">DISSENY</a></li>
+						<li><a href="">PROJECTES</a></li>
+						<li><a href="">UTILITATS</a>
+							<ul>
+								<li><a href="">Submenu1</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="">ELÈCTRICS I NDT</a>
+					<ul>
+						<li><a href="">DOCUMENTACIÓ</a></li>
+						<li><a href="">SOFTWARE</a></li>
+						<li><a href="">PROJECTES</a></li>
+						<li><a href="">UTILITATS</a></li>
+					</ul>
+				</li>
+				<li><a href="">ADMINISTRACIÓ I LOGÍSTICA</a>
+					<ul>
+						<li><a href="">DOCUMENTACIÓ</a></li>
+						<li><a href="">UTILITATS</a></li>
+						<li><a href="">LANZAPPS</a></li>
+					</ul>
+				</li>
+				<li><a href="">MUNTATGE I SAT</a>
+					<ul>
+						<li><a href="">DOCUMENTACIÓ</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="titulo">
+		<h1>UNICAPP</h1>
+	</div>
+	<!-- BARRA DE BÚSQUEDA -->
+	<div class="search">
+		<h2>Search</h2>
+		<input class="barra-busqueda" type="search" name="busqueda" placeholder="search">
+		<input type="submit" value="buscar">
+	</div>	
   </body>
 </html>
