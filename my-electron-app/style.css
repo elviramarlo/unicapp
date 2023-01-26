@@ -1,64 +1,100 @@
 * {
-	margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
 }
 body {
 	background-color: rgb(189, 9, 9);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
 	color: #ffffff;
 }
 
+/* BARRA ICONOS */
+.barra-iconos {
+	margin: 15px;
+	width: 25px;
+}
+.lanzapps {
+	position: absolute;
+	left: 85%;
+	top: 0px;
+}
+.lanzapps button {
+	left: 80%;
+}
+.img-menu {
+	width: 20px;
+	height: 20px;
+}
+.cerrar, .minimize, .lanzapps button {
+	background-color: rgb(189, 9, 9);
+	width: 40px;
+	height: 40px;
+	top: 0px;
+	position: absolute;
+	border: none;
+}
+.cerrar {
+	left: 95%;
+}
+.cerrar img {
+	width: 20px;
+	height: 20px;
+}
+.minimize {
+	left: 90%;
+	font-size: 30px;
+	color: #ffffff;
+}	
+.lanzapps button:hover, .cerrar:hover, .minimize:hover {
+	background-color: #756f6f;
+}
+
 /* MENÚ DESPLEGABLE */
+.menu { 
+	display: inline;
+}
 #header {
-/* 	margin: auto; */
 	display: none;
 }
 .menu:hover #header
 {
-	display: block;
+	display: inline;
+	position: absolute;
+	top: 5px;
+	left: 40px;
 }
-
-.menu p {
-	margin: 15px;
-	margin-bottom: 0;
-}
-
 ul {
 	list-style: none;
 }
-
 .nav > li {
 	float: left;
 }
-
 .nav li a {
 	background-color: rgb(189, 9, 9);
 	color: #ffffff;
 	text-decoration: none;
-	padding: 10px 12px;
+	padding: 9px 8px;
 	display: block;
 }
-
 .nav li a:hover {
 	background-color:#756f6f;
 }
-
 .nav li ul {
 	display: none;
 	position: absolute;
 	min-width: 140px;
 }
-
 .nav li:hover > ul {
 	display: block;
+	width: 140px;
 }
-
 .nav li ul li {
 	position: relative;
 }
-
 .nav li ul li ul {
-	right: -140px;
+	left: 140px;
 	top: 0px;
 }
 
@@ -66,29 +102,36 @@ ul {
 
 /* TITULO */
 h1 {
-	align-items: center;
 	text-align: center;
-	font-size: 50px;
-	margin-bottom: 40px;
+	font-size: 60px;
+	margin-bottom: 30px;
+	margin-top: 20px;
 }
 
-/* BARRA DE BÚSQUEDA */
+/* BARA DE BÚSQUEDA */
 .search {
 	display: block;
 }
-.search h2
-{
-	align-items: center;
+.search h2 {
 	text-align: center;
 	margin-bottom: 10px;
-	
 }
-.barra-busqueda
-{
-	margin-left: 5%;
+.barra-busqueda {
+	margin-left: 7%;
 	width: 80%;
 	height: 30px;
 	border-radius: 10px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 	border: 1px solid white;
-	
+	padding-top: 3px;
+	padding-left: 10px;
+}
+.boton-busqueda {
+	height: 30px;
+	width: 30px;
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border: 1px solid white;
 }

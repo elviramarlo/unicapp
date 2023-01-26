@@ -3,60 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+   <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
 	<link rel="stylesheet" type="text/css" href="./style.css">
     <title>Unicapp</title>
-  </head>
-  <body>
+
+</head>
+<body>
+	<script src="./index.js"></script>
 	<!-- Todo el div "menu" es para el menú desplegable -->
-	<div class="menu">
-		<p>MENU</p>
-		<div id="header">
-			<ul class="nav">
-				<li><a href="">GENERAL</a>
-					<ul>
-						<li><a href="">DOCUMENTACIÓ</a></li>
-						<li><a href="">UTILITATS AMES</a></li>
-						<li><a href="">UTILITATS WINDOWS</a></li>
-						<li><a href="">LANZAPPS</a></li>
-					</ul>
-				</li>
-				<li><a href="">MECÀNICS</a>
-					<ul>
-						<li><a href="">DOCUMENTACIÓ</a></li>
-						<li><a href="">DISSENY</a></li>
-						<li><a href="">PROJECTES</a></li>
-						<li><a href="">UTILITATS</a>
+	<div class="barra-iconos">
+		<div class="menu">
+			<p><img class="img-menu" src="imgs/menu-4-xxl.png" alt=""></p>
+			<div id="header">
+				<ul class="nav">
+					<li><a href="">GENERAL</a>
+						<ul>
+							<li><a href="">DOCUMENTACIÓ</a>
+								<ul>
+									<li><a href="">Normes i seguretat</a></li>
+									<li><a href="">Catàlegs</a></li>
+									<li><a href="">Coneixements</a></li>
+									<li><a href="">Documentació projectes</a></li>
+									<li><a href="">Llistats projectes</a></li>
+									<li><a href="">Logos AMES</a></li>
+									<li><a href="">Plantilles</a></li>
+									<li><a href="">Convenis AMES-CMA</a></li>
+								</ul>
+							</li>
+							<li><a href="">UTILITATS AMES</a>
+								<ul>
+									<li><a href="">LoginScript</a></li>
+									<li><a href="">Gediva Generator</a></li>
+									<li><a href="">Imprimir PDFs</a></li>
+									<li><a href="">Crear ticket d'informàtica</a></li>
+									<li><a href="">Reservar sala reunions</a></li>
+								</ul>
+							</li>
+							<li><a href="">UTIL. WINDOWS</a>
+								<ul>
+									<li><a href="">Reiniciar Windows Explorer</a></li>
+									<li><a href="">Programar apagat PC</a></li>
+									<li><a href="">Disoldre carpetes</a></li>
+									<li><a href="">Endreçar arxius</a></li>
+									<li><a href="">Canviar noms arxius</a></li>
+								</ul>
+							</li>
+							<li><a href="">LANZAPPS</a>
+								<ul>
+									<li><a href="">Lanzapps</a></li>
+									<li><a href="">Gestió</a></li>
+									<li><a href="">Hores</a></li>
+									<li><a href="">PDF Builder</a></li>
+									<li><a href="">IsoCAT</a></li>
+									<li><a href="">DAP</a></li>
+									<li><a href="">Màquines</a></li>
+									<li><a href="">DirAMES</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="">MECÀNICS</a>
+						<ul>
+							<li><a href="">DOCUMENTACIÓ</a>
+								<ul>
+									<li><a href="">Documentació general</a></li>
+									<li><a href="">Cercle OT-CMA</a></li>
+									<li><a href="">Idees de millora</a></li>
+								</ul>
+							</li>
+							<li><a href="">DISSENY</a>
+								<ul>
+									<li><a href="">Precodificats</a></li>
+									<li><a href="">Codificats</a></li>
+									<li><a href="">Normalitzats</a></li>
+									<li><a href="">Palette parts</a></li>
+									<li><a href="">Peces AMES</a></li>
+								</ul>
+							</li>
+							<li><a href="">PROJECTES</a>
 							<ul>
-								<li><a href="">Submenu1</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a href="">ELÈCTRICS I NDT</a>
-					<ul>
-						<li><a href="">DOCUMENTACIÓ</a></li>
-						<li><a href="">SOFTWARE</a></li>
-						<li><a href="">PROJECTES</a></li>
-						<li><a href="">UTILITATS</a></li>
-					</ul>
-				</li>
-				<li><a href="">ADMINISTRACIÓ I LOGÍSTICA</a>
-					<ul>
-						<li><a href="">DOCUMENTACIÓ</a></li>
-						<li><a href="">UTILITATS</a></li>
-						<li><a href="">LANZAPPS</a></li>
-					</ul>
-				</li>
-				<li><a href="">MUNTATGE I SAT</a>
-					<ul>
-						<li><a href="">DOCUMENTACIÓ</a></li>
-					</ul>
-				</li>
-			</ul>
+								<li><a href="">Plantilla carpetes projecte</a></li>
+								<li><a href="">03 - Premses</a></li>
+								<li><a href="">04 - Forns</a></li>
+								<li><a href="">05 - Automatismes</a></li>
+								<li><a href="">24 - Elem. de manipulació</a></li>
+								<li><a href="">55 - Dissenys estàndard</a></li>
+							</ul></li>
+							<li><a href="">UTILITATS</a>
+								<ul>
+									<li><a href="">[SW] Restaurar configuració</a></li>
+									<li><a href="">[SW] Reemplaça cargolam</a></li>
+									<li><a href=""> Actualitzar Format[SW]</a></li>
+									<li><a href="">[SW] Llista de materials</a></li>
+									<li><a href="">[SW] Imprimir Conjunt</a></li>
+									<li><a href="">[SW] Sld To Tot</a></li>
+									<li><a href="">Estandarització detectors</a></li>
+									<li><a href="">Contactes AMES-CMA</a></li>
+									<li><a href="">Esborrar temporals</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="">ELÈCTRICS I NDT</a>
+						<ul>
+							<li><a href="">DOCUMENTACIÓ</a>
+								<ul>
+									<li><a href="">Elèctrics</a></li>
+									<li><a href="">Visió i NDT</a></li>
+									<li><a href="">Llibreries</a></li>
+								</ul>
+							</li>
+							<li><a href="">SOFTWARE</a>
+								<ul>
+									<li><a href="">Software</a></li>
+									<li><a href="">Actualitzar CX-One Sysmac</a></li>
+								</ul>
+							</li>
+							<li><a href="">PROJECTES</a>
+								<ul>
+									<li><a href="">Elèctrics</a></li>
+									<li><a href="">Visió i NDT</a></li>
+								</ul>
+							</li>
+							<li><a href="">UTILITATS</a>
+								<ul>
+									<li><a href="">Referències material</a></li>
+									<li><a href="">Registres web</a></li>
+									<li><a href="">Corrents màxims</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="">ADMINISTRACIÓ I LOGÍSTICA</a>
+						<ul>
+							<li><a href="">DOCUMENTACIÓ</a>
+								<ul>
+									<li><a href="">Personal AMES-CMA</a></li>
+									<li><a href="">Calendaris AMES</a></li>
+									<li><a href="">Organigrames AMES</a></li>
+									<li><a href="">Enviaments a plantes</a></li>
+									<li><a href="">Magatzem</a></li>
+								</ul>
+							</li>
+							<li><a href="">UTILITATS</a>
+								<ul>
+									<li><a href="">Petitions per LDM</a></li>
+									<li><a href="">Gestocs</a></li>
+								</ul>
+							</li>
+							<li><a href="">LANZAPPS</a>
+								<ul>
+									<li><a href="">Gestió IPs</a></li>
+									<li><a href="">Codificació articles</a></li>
+									<li><a href="">Entrada albarans</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="">MUNTATGE I SAT</a>
+						<ul>
+							<li><a href="">DOCUMENTACIÓ</a>
+								<ul>
+									<li><a href="">Fotos</a></li>
+									<li><a href="">Publicacions</a></li>
+									<li><a href="">Maquinaria</a></li>
+									<li><a href="">Procediments</a></li>
+									<li><a href="">Verificacions</a></li>
+									<li><a href="">Prevenció</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="lanzapps">
+			<button>&#9889</button>
+		</div>
+		<div class="close">
+			<button onclick="windowClose()" class="cerrar"><img src="imgs/close.png" alt=""></button>
+		</div>
+		<div class="minimizar">
+			<button onclick="minimize()" class="minimize">-</button>
 		</div>
 	</div>
+	<!-- TITULO -->
 	<div class="titulo">
 		<h1>UNICAPP</h1>
 	</div>
@@ -64,7 +196,7 @@
 	<div class="search">
 		<h2>Search</h2>
 		<input class="barra-busqueda" type="search" name="busqueda" placeholder="search">
-		<input type="submit" value="buscar">
+		<input class="boton-busqueda" type="submit" value="🔍">
 	</div>	
   </body>
 </html>
