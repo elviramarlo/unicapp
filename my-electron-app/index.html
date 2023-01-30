@@ -7,11 +7,9 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
 	<link rel="stylesheet" type="text/css" href="./style.css">
     <title>Unicapp</title>
-
 </head>
 <body>
-	<script src="./index.js"></script>
-	<!-- Todo el div "menu" es para el menú desplegable -->
+	<!-- MENÚ Y BOTONES -->
 	<div class="barra-iconos">
 		<div class="menu">
 			<p><img class="img-menu" src="imgs/menu-4-xxl.png" alt=""></p>
@@ -24,7 +22,7 @@
 									<li><a href="">Normes i seguretat</a></li>
 									<li><a href="">Catàlegs</a></li>
 									<li><a href="">Coneixements</a></li>
-									<li><a href="">Documentació projectes</a></li>
+									<li><a href="" class="disabledPDM">Documentació projectes</a></li>
 									<li><a href="">Llistats projectes</a></li>
 									<li><a href="">Logos AMES</a></li>
 									<li><a href="">Plantilles</a></li>
@@ -34,7 +32,7 @@
 							<li><a href="">UTILITATS AMES</a>
 								<ul>
 									<li><a href="">LoginScript</a></li>
-									<li><a href="">Gediva Generator</a></li>
+									<li><a href="" class="disabledPDM">Gediva Generator</a></li>
 									<li><a href="">Imprimir PDFs</a></li>
 									<li><a href="">Crear ticket d'informàtica</a></li>
 									<li><a href="">Reservar sala reunions</a></li>
@@ -74,33 +72,33 @@
 							</li>
 							<li><a href="">DISSENY</a>
 								<ul>
-									<li><a href="">Precodificats</a></li>
-									<li><a href="">Codificats</a></li>
-									<li><a href="">Normalitzats</a></li>
+									<li><a href=""  class="disabledPDM">Precodificats</a></li>
+									<li><a href=""  class="disabledPDM">Codificats</a></li>
+									<li><a href="" class="disabledPDM">Normalitzats</a></li>
 									<li><a href="">Palette parts</a></li>
-									<li><a href="">Peces AMES</a></li>
+									<li><a href=""  class="disabledPDM">Peces AMES</a></li>
 								</ul>
 							</li>
 							<li><a href="">PROJECTES</a>
 							<ul>
-								<li><a href="">Plantilla carpetes projecte</a></li>
+								<li><a href=""  class="disabledPDM">Plantilla carpetes projecte</a></li>
 								<li><a href="">03 - Premses</a></li>
 								<li><a href="">04 - Forns</a></li>
 								<li><a href="">05 - Automatismes</a></li>
-								<li><a href="">24 - Elem. de manipulació</a></li>
+								<li><a href=""  class="disabledPDM">24 - Elem. de manipulació</a></li>
 								<li><a href="">55 - Dissenys estàndard</a></li>
 							</ul></li>
 							<li><a href="">UTILITATS</a>
 								<ul>
-									<li><a href="">[SW] Restaurar configuració</a></li>
-									<li><a href="">[SW] Reemplaça cargolam</a></li>
-									<li><a href=""> Actualitzar Format[SW]</a></li>
-									<li><a href="">[SW] Llista de materials</a></li>
-									<li><a href="">[SW] Imprimir Conjunt</a></li>
-									<li><a href="">[SW] Sld To Tot</a></li>
-									<li><a href="">Estandarització detectors</a></li>
-									<li><a href="">Contactes AMES-CMA</a></li>
-									<li><a href="">Esborrar temporals</a></li>
+									<li><a class="nombres-largos disabledPDM" href="">[SW] Restaurar configuració</a></li>
+									<li><a class="nombres-largos disabledPDM" href="">[SW] Reemplaça cargolam</a></li>
+									<li><a class="nombres-largos" href=""> Actualitzar Format[SW]</a></li>
+									<li><a class="nombres-largos disabledPDM" href="">[SW] Llista de materials</a></li>
+									<li><a class="nombres-largos" href="">[SW] Imprimir Conjunt</a></li>
+									<li><a class="nombres-largos" href="">[SW] Sld To Tot</a></li>
+									<li><a class="nombres-largos" href="">Estandarització detectors</a></li>
+									<li><a class="nombres-largos" href="">Contactes AMES-CMA</a></li>
+									<li><a class="nombres-largos" href="">Esborrar temporals</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -148,7 +146,7 @@
 							</li>
 							<li><a href="">UTILITATS</a>
 								<ul>
-									<li><a href="">Petitions per LDM</a></li>
+									<li><a href=""  class="disabledPDM">Petitions per LDM</a></li>
 									<li><a href="">Gestocs</a></li>
 								</ul>
 							</li>
@@ -168,7 +166,7 @@
 									<li><a href="">Fotos</a></li>
 									<li><a href="">Publicacions</a></li>
 									<li><a href="">Maquinaria</a></li>
-									<li><a href="">Procediments</a></li>
+									<li><a href="" class="disabledPDM">Procediments</a></li>
 									<li><a href="">Verificacions</a></li>
 									<li><a href="">Prevenció</a></li>
 								</ul>
@@ -178,25 +176,48 @@
 				</ul>
 			</div>
 		</div>
-		<div class="lanzapps">
-			<button>&#9889</button>
-		</div>
-		<div class="close">
-			<button onclick="windowClose()" class="cerrar"><img src="imgs/close.png" alt=""></button>
-		</div>
-		<div class="minimizar">
-			<button onclick="minimize()" class="minimize">-</button>
+		<div>
+			<button class="info"><p>&#9432;</p></button>
+			<button onclick="checkSwitch()" class="lanzapps"><img src="imgs/rayo.png" alt=""></button>
+			<button onclick="windowClose()" class="cerrar">&times;</button>
+			<button onclick="minimize()" class="minimize"><p>&#95;</p></button>
 		</div>
 	</div>
 	<!-- TITULO -->
 	<div class="titulo">
+		<hr>
 		<h1>UNICAPP</h1>
+		<hr>
 	</div>
 	<!-- BARRA DE BÚSQUEDA -->
-	<div class="search">
+	<div class="wrap">
 		<h2>Search</h2>
-		<input class="barra-busqueda" type="search" name="busqueda" placeholder="search">
-		<input class="boton-busqueda" type="submit" value="🔍">
-	</div>	
+		<div class="search">
+			<form autocomplete="off" action="/action_page.php">
+				<div class="autocomplete">
+					<input id="myInput" type="text" name="myCountry" placeholder="Search">
+				</div>
+				<button type="submit" class="boton-busqueda">
+					<img src="imgs/search.png" alt="search">
+				</button>
+			</form>
+		</div>
+	</div>
+	
+	<!-- BOTONES SWITCH -->
+	<label for="PDM-switch" class="switch first">
+		<input type="checkbox" id="PDM-switch" checked onclick="changePDMSwitchValue('#PDM-switch')">
+		<span class="slider round"></span>
+		<p>PDM</p>
+	</label>
+	<br>
+	<label for="lanzapps-switch" class="switch">
+		<input type="checkbox" id="lanzapps-switch" onclick="changePDMSwitchValue('#lanzapps-switch')">
+		<span class="slider round"></span>
+		<p>Lanzapps</p>
+	</label>
+	
+	<script src="search.js"></script>
+	<script src="index.js"></script>
   </body>
 </html>
