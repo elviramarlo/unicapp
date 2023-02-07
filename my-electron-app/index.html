@@ -12,163 +12,165 @@
 	<!-- MENÚ Y BOTONES -->
 	<div class="barra-iconos">
 		<div class="menu">
-			<p><img class="img-menu" src="imgs/menu-4-xxl.png" alt=""></p>
+			<button class="icon-menu" onclick="showMenu()"><img class="img-menu" src="imgs/menu-4-xxl.png" alt=""></button>
 			<div id="header">
 				<ul class="nav">
-					<li><a href="">GENERAL</a>
+					<li><a class="bold" href="">GENERAL</a>
 						<ul>
 							<li><a href="">DOCUMENTACIÓ</a>
 								<ul>
-									<li><a href="">Normes i seguretat</a></li>
-									<li><a href="">Catàlegs</a></li>
-									<li><a href="">Coneixements</a></li>
-									<li><a href="" class="disabledPDM">Documentació projectes</a></li>
-									<li><a href="">Llistats projectes</a></li>
-									<li><a href="">Logos AMES</a></li>
-									<li><a href="">Plantilles</a></li>
-									<li><a href="">Convenis AMES-CMA</a></li>
+									<li><a onclick="findFolder('Normes i seguretat')" href="">Normes i seguretat</a>
+										<ul>
+											<li><a class="index" onclick="findFolder('Index normes')" href="">Index</a></li>
+										</ul>
+									</li>
+									<li><a onclick="findFolder('Catàlegs')" href="">Catàlegs</a>
+										<ul>
+											<li><a class="index" onclick="openFolder('Index catàlegs')" href="">Index</a></li>
+										</ul>
+									</li>
+									<li><a onclick="openFolder('Coneixements')" href="">Coneixements</a>
+										<ul>
+											<li><a class="index" onclick="findFolder('Index coneixements')" href="">Index</a></li>
+										</ul>
+									</li>
+									<li><a href="" class="disabledPDM" onclick="findFolder('Documentació projectes')">Documentació projectes</a></li>
+									<li><a onclick="findFolder('Llistats projectes')" href="">Llistats projectes</a></li>
+									<li><a onclick="findFolder('Logos AMES')" href="">Logos AMES</a></li>
+									<li><a onclick="findFolder('Plantilles')" href="">Plantilles</a></li>
+									<li><a onclick="findFolder('Convenis AMES-CMA')" href="">Convenis AMES-CMA</a></li>
 								</ul>
 							</li>
 							<li><a href="">UTILITATS AMES</a>
 								<ul>
-									<li><a href="">LoginScript</a></li>
-									<li><a href="" class="disabledPDM">Gediva Generator</a></li>
-									<li><a href="">Imprimir PDFs</a></li>
-									<li><a href="">Crear ticket d'informàtica</a></li>
-									<li><a href="">Reservar sala reunions</a></li>
+									<li><a onclick="findFolder('LoginScript')" href="">LoginScript</a></li>
+									<li><a onclick="findFolder('Gediva Generator')" href="" class="disabledPDM">Gediva Generator</a></li>
+									<li><a onclick="findFolder('Imprimir PDFs')" href="">Imprimir PDFs</a></li>
+									<li><a href="" onclick="findFolder('DirAMES')">DirAMES</a></li>
+									<li><a onclick="sendEmailTicket()" href="">Crear ticket d'informàtica</a></li>
+									<li><a onclick="sendEmailSala()" href="">Reservar sala reunions</a></li>
 								</ul>
 							</li>
 							<li><a href="">UTIL. WINDOWS</a>
 								<ul>
-									<li><a href="">Reiniciar Windows Explorer</a></li>
-									<li><a href="">Programar apagat PC</a></li>
-									<li><a href="">Disoldre carpetes</a></li>
-									<li><a href="">Endreçar arxius</a></li>
-									<li><a href="">Canviar noms arxius</a></li>
-								</ul>
-							</li>
-							<li><a href="">LANZAPPS</a>
-								<ul>
-									<li><a href="">Lanzapps</a></li>
-									<li><a href="">Gestió</a></li>
-									<li><a href="">Hores</a></li>
-									<li><a href="">PDF Builder</a></li>
-									<li><a href="">IsoCAT</a></li>
-									<li><a href="">DAP</a></li>
-									<li><a href="">Màquines</a></li>
-									<li><a href="">DirAMES</a></li>
+									<li><a onclick="findFolder('Reiniciar Windows Explorer')" href="">Reiniciar Windows Explorer</a></li>
+									<li><a onclick="messageBox('Work in progress...')" href="">Programar apagat PC</a></li>
+									<li><a onclick="messageBox('Work in progress...')" href="">Disoldre carpetes</a></li>
+									<li><a onclick="messageBox('Work in progress...')" href="">Endreçar arxius</a></li>
+									<li><a onclick="messageBox('Work in progress...')" href="">Canviar noms arxius</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li><a href="">MECÀNICS</a>
+					<li><a class="bold" href="">MECÀNICS</a>
 						<ul>
 							<li><a href="">DOCUMENTACIÓ</a>
 								<ul>
-									<li><a href="">Documentació general</a></li>
-									<li><a href="">Cercle OT-CMA</a></li>
-									<li><a href="">Idees de millora</a></li>
+									<li><a onclick="findFolder('Documentació general')" href="">Documentació general</a></li>
+									<li><a onclick="findFolder('Cercle OT-CMA')" href="">Cercle OT-CMA</a></li>
+									<li><a onclick="findFolder('Idees de millora')" href="">Idees de millora</a>
+										<ul>
+											<li><a onclick="findFolder('Nova idea de millora')" href="">Nova idea de millora</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 							<li><a href="">DISSENY</a>
 								<ul>
-									<li><a href=""  class="disabledPDM">Precodificats</a></li>
-									<li><a href=""  class="disabledPDM">Codificats</a></li>
-									<li><a href="" class="disabledPDM">Normalitzats</a></li>
-									<li><a href="">Palette parts</a></li>
-									<li><a href=""  class="disabledPDM">Peces AMES</a></li>
+									<li><a href="" onclick="findFolder('Precodificats')" class="disabledPDM">Precodificats</a></li>
+									<li><a href="" onclick="findFolder('Codificats')" class="disabledPDM">Codificats</a></li>
+									<li><a href="" onclick="findFolder('Normalitzats')" class="disabledPDM">Normalitzats</a></li>
+									<li><a onclick="findFolder('Palette parts')" href="">Palette parts</a></li>
+									<li><a href="" onclick="findFolder('Peces AMES')" class="disabledPDM">Peces AMES</a></li>
 								</ul>
 							</li>
 							<li><a href="">PROJECTES</a>
 							<ul>
-								<li><a href=""  class="disabledPDM">Plantilla carpetes projecte</a></li>
-								<li><a href="">03 - Premses</a></li>
-								<li><a href="">04 - Forns</a></li>
-								<li><a href="">05 - Automatismes</a></li>
-								<li><a href=""  class="disabledPDM">24 - Elem. de manipulació</a></li>
-								<li><a href="">55 - Dissenys estàndard</a></li>
+								<li><a onclick="findFolder('Plantilla carpetes projecte')" href="" class="disabledPDM">Plantilla carpetes projecte</a></li>
+								<li><a onclick="findFolder('03 - Premses')" href="">03 - Premses</a></li>
+								<li><a onclick="findFolder('04 - Forns')" href="">04 - Forns</a></li>
+								<li><a onclick="findFolder('05 - Automatismes')" href="">05 - Automatismes</a></li>
+								<li><a onclick="findFolder('24 - Elem. de manipulació')" href="" class="disabledPDM">24 - Elem. de manipulació</a></li>
+								<li><a onclick="findFolder('55 - Dissenys estàndard')" href="">55 - Dissenys estàndard</a></li>
 							</ul></li>
 							<li><a href="">UTILITATS</a>
 								<ul>
-									<li><a class="nombres-largos disabledPDM" href="">[SW] Restaurar configuració</a></li>
-									<li><a class="nombres-largos disabledPDM" href="">[SW] Reemplaça cargolam</a></li>
-									<li><a class="nombres-largos" href=""> Actualitzar Format[SW]</a></li>
-									<li><a class="nombres-largos disabledPDM" href="">[SW] Llista de materials</a></li>
-									<li><a class="nombres-largos" href="">[SW] Imprimir Conjunt</a></li>
-									<li><a class="nombres-largos" href="">[SW] Sld To Tot</a></li>
-									<li><a class="nombres-largos" href="">Estandarització detectors</a></li>
-									<li><a class="nombres-largos" href="">Contactes AMES-CMA</a></li>
-									<li><a class="nombres-largos" href="">Esborrar temporals</a></li>
+									<li><a onclick="findFolder('Restaurar configuració')" class="nombres-largos disabledPDM" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Restaurar configuració</a></li>
+									<li><a onclick="findFolder('Reemplaça cargolam')" class="nombres-largos disabledPDM" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Reemplaça cargolam</a></li>
+									<li><a onclick="findFolder('Actualitzar Format')" class="nombres-largos" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Actualitzar Format</a></li>
+									<li><a onclick="findFolder('Llista de materials')" class="nombres-largos disabledPDM" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Llista de materials</a></li>
+									<li><a onclick="findFolder('Imprimir Conjunt')" class="nombres-largos" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Imprimir Conjunt</a></li>
+									<li><a onclick="findFolder('Sld To Tot')" class="nombres-largos" href=""><img class="sw" src="imgs/sw_blanco.png" alt=""> Sld To Tot</a></li>
+									<li><a onclick="findFolder('Estandarització detectors')" class="nombres-largos" href="">Estandarització detectors</a></li>
+									<li><a onclick="findFolder('Contactes AMES-CMA')" class="nombres-largos" href="">Contactes AMES-CMA</a></li>
+									<li><a onclick="findFolder('Esborrar temporals')" class="nombres-largos" href="">Esborrar temporals</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li><a href="">ELÈCTRICS I NDT</a>
+					<li><a class="bold" href="">ELÈCTRICS I NDT</a>
 						<ul>
 							<li><a href="">DOCUMENTACIÓ</a>
 								<ul>
-									<li><a href="">Elèctrics</a></li>
-									<li><a href="">Visió i NDT</a></li>
-									<li><a href="">Llibreries</a></li>
+									<li><a onclick="findFolder('Elèctrics Documentació')" href="">Elèctrics</a></li>
+									<li><a onclick="findFolder('Visió i NDT Documentació')" href="">Visió i NDT</a></li>
+									<li><a onclick="findFolder('Llibreries')" href="">Llibreries</a></li>
 								</ul>
 							</li>
 							<li><a href="">SOFTWARE</a>
 								<ul>
-									<li><a href="">Software</a></li>
-									<li><a href="">Actualitzar CX-One Sysmac</a></li>
+									<li><a onclick="findFolder('Software')" href="">Software</a></li>
+									<li><a onclick="findFolder('Actualitzar CX-One Sysmac')" href="">Actualitzar CX-One Sysmac</a></li>
 								</ul>
 							</li>
 							<li><a href="">PROJECTES</a>
 								<ul>
-									<li><a href="">Elèctrics</a></li>
-									<li><a href="">Visió i NDT</a></li>
+									<li><a onclick="findFolder('Elèctrics Projectes')" href="">Elèctrics</a></li>
+									<li><a onclick="findFolder('Visió i NDT Projectes')" href="">Visió i NDT</a></li>
 								</ul>
 							</li>
 							<li><a href="">UTILITATS</a>
 								<ul>
-									<li><a href="">Referències material</a></li>
-									<li><a href="">Registres web</a></li>
-									<li><a href="">Corrents màxims</a></li>
+									<li><a onclick="findFolder('Referències material')" href="">Referències material</a></li>
+									<li><a onclick="findFolder('Registres web')" href="">Registres web</a></li>
+									<li><a onclick="findFolder('Corrents màxims')" href="">Corrents màxims</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li><a href="">ADMINISTRACIÓ I LOGÍSTICA</a>
+					<li><a class="bold" href="">ADMINISTRACIÓ I LOGÍSTICA</a>
 						<ul>
 							<li><a href="">DOCUMENTACIÓ</a>
 								<ul>
-									<li><a href="">Personal AMES-CMA</a></li>
-									<li><a href="">Calendaris AMES</a></li>
-									<li><a href="">Organigrames AMES</a></li>
-									<li><a href="">Enviaments a plantes</a></li>
-									<li><a href="">Magatzem</a></li>
+									<li><a onclick="findFolder('Personal AMES-CMA')" href="">Personal AMES-CMA</a></li>
+									<li><a onclick="findFolder('Calendaris AMES')" href="">Calendaris AMES</a></li>
+									<li><a onclick="findFolder('Organigrames AMES')" href="">Organigrames AMES</a></li>
+									<li><a onclick="findFolder('Enviaments a plantes')" href="">Enviaments a plantes</a></li>
+									<li><a onclick="findFolder('Magatzem')" href="">Magatzem</a></li>
 								</ul>
 							</li>
 							<li><a href="">UTILITATS</a>
 								<ul>
-									<li><a href=""  class="disabledPDM">Petitions per LDM</a></li>
-									<li><a href="">Gestocs</a></li>
-								</ul>
-							</li>
-							<li><a href="">LANZAPPS</a>
-								<ul>
-									<li><a href="">Gestió IPs</a></li>
-									<li><a href="">Codificació articles</a></li>
-									<li><a href="">Entrada albarans</a></li>
+									<li><a onclick="findFolder('Peticions per LDM')" href=""  class="disabledPDM">Peticions per LDM</a></li>
+									<li><a onclick="messageBox('Work in progress...')" href="">Gestocs</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-					<li><a href="">MUNTATGE I SAT</a>
+					<li><a class="bold" href="">MUNTATGE I SAT</a>
 						<ul>
 							<li><a href="">DOCUMENTACIÓ</a>
-								<ul>
-									<li><a href="">Fotos</a></li>
-									<li><a href="">Publicacions</a></li>
-									<li><a href="">Maquinaria</a></li>
-									<li><a href="" class="disabledPDM">Procediments</a></li>
-									<li><a href="">Verificacions</a></li>
-									<li><a href="">Prevenció</a></li>
+								<ul class="lastUl">
+									<li><a onclick="findFolder('Fotos')" href="">Fotos</a></li>
+									<li><a onclick="findFolder('Ppublicacions')" href="">Publicacions</a></li>
+									<li><a onclick="findFolder('Maquinaria')" href="">Maquinaria</a></li>
+									<li><a onclick="findFolder('Procediments')" href="" class="disabledPDM">Procediments</a>
+										<ul>
+											<li><a onclick="findFolder('Index procediments')" class="index lastIndex" href="">Index</a></li>
+										</ul>
+									</li>
+									<li><a onclick="findFolder('Verificacions')" href="">Verificacions</a></li>
+									<li><a onclick="findFolder('Prevenció')" href="">Prevenció</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -177,8 +179,22 @@
 			</div>
 		</div>
 		<div>
-			<button class="info"><p>&#9432;</p></button>
-			<button onclick="checkSwitch()" class="lanzapps"><img src="imgs/rayo.png" alt=""></button>
+			<button class="info"><img src="imgs/info_circulo_blanco.png" alt=""></button>
+			<div class="menu-lanzapps">
+				<button class="lanzapps"><img src="imgs/rayo_circulo_blanco.png" alt=""></button>
+				<ul class="list-lanzapps">
+					<li><a href="" class="noDisabled" onclick="findFolder('Lanzapps')">Lanzapps</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Gestió')">Gestió</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Hores')">Hores</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('PDF Builder')">PDF Builder</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('IsoCAT')">IsoCAT</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('DAP')">DAP</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Màquines')">Màquines</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Gestió IPs')">Gestió IPs</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Codificació articles')">Codificació articles</a></li>
+					<li><a href="" class="disabledLanzapps" onclick="findFolder('Entrada albarans')">Entrada albarans</a></li>
+				</ul>
+			</div>
 			<button onclick="windowClose()" class="cerrar">&times;</button>
 			<button onclick="minimize()" class="minimize"><p>&#95;</p></button>
 		</div>
@@ -193,30 +209,28 @@
 	<div class="wrap">
 		<h2>Search</h2>
 		<div class="search">
-			<form autocomplete="off" action="/action_page.php">
+			<form autocomplete="off">
 				<div class="autocomplete">
-					<input id="myInput" type="text" name="myCountry" placeholder="Search">
+					<input id="myInput" type="text" onkeyup="onKeyUp(event)" placeholder="Search">
 				</div>
-				<button type="submit" class="boton-busqueda">
+				<button class="boton-busqueda" id="botBusq">
 					<img src="imgs/search.png" alt="search">
 				</button>
 			</form>
 		</div>
 	</div>
-	
 	<!-- BOTONES SWITCH -->
-	<label for="PDM-switch" class="switch first">
-		<input type="checkbox" id="PDM-switch" checked onclick="changePDMSwitchValue('#PDM-switch')">
+	<label for="PDM-switch" class="switch">
+		<input type="checkbox" id="PDM-switch" checked onclick="changeSwitchValue('#PDM-switch', 'disabledPDM')">
 		<span class="slider round"></span>
 		<p>PDM</p>
 	</label>
 	<br>
 	<label for="lanzapps-switch" class="switch">
-		<input type="checkbox" id="lanzapps-switch" onclick="changePDMSwitchValue('#lanzapps-switch')">
+		<input type="checkbox" id="lanzapps-switch" onclick="changeSwitchValue('#lanzapps-switch', 'disabledLanzapps')">
 		<span class="slider round"></span>
 		<p>Lanzapps</p>
 	</label>
-	
 	<script src="search.js"></script>
 	<script src="index.js"></script>
   </body>

@@ -8,11 +8,17 @@ body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
-/* 	-webkit-app-region: drag; */
+	-webkit-app-region: drag; /* xq no funciona arriba del todo */
 }
-button, input, a, .menu, label {
+button, input, a, label, ul, li, div {
 	-webkit-app-region: no-drag;
-  }
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.bold {
+	font-weight: bold;
+}
 /* BARRA ICONOS */
 .barra-iconos {
 	margin: 15px;
@@ -20,7 +26,19 @@ button, input, a, .menu, label {
 }
 .img-menu {
 	width: 20px;
-	height: 20px;
+	height: auto;
+	margin-top: 10px;
+}
+.icon-menu {
+	border: none;
+	background-color: rgb(189, 9, 9);
+	width: 40px;
+	height: 40px;
+	top: 0px;
+	position: absolute;
+	left: 0%;
+	margin-left: 5px;
+	margin-bottom: 20px;
 }
 .cerrar, .minimize, .lanzapps, .info {
 	background-color: rgb(189, 9, 9);
@@ -34,17 +52,13 @@ button, input, a, .menu, label {
 .info {
 	left: 80%;
 }
-.info p {
-	font-size: 22px;
-	margin-top: 4px;
-}
 .lanzapps {
 	left: 85%;
 }
-.lanzapps img {
+.lanzapps img, .info img {
 	margin-top: 5px;
-	width: 20px;
-	height: 20px;
+	width: 25px;
+	height: auto;
 }
 .cerrar {
 	left: 95%;
@@ -58,23 +72,18 @@ button, input, a, .menu, label {
 	font-weight: bold;
 	margin-top: -25px;
 }
-.info:hover, .lanzapps:hover, .cerrar:hover, .minimize:hover {
+.info:hover, .lanzapps:hover, .cerrar:hover, .minimize:hover, .icon-menu:hover {
 	background-color:#d83838;
 }
-
 /* MENÚ DESPLEGABLE */
 .menu { 
 	display: inline;
 }
 #header {
 	display: none;
-}
-.menu:hover #header
-{
-	display: inline;
 	position: absolute;
 	top: 5px;
-	left: 40px;
+	left: 47px;
 	z-index: 1;
 }
 ul {
@@ -114,14 +123,66 @@ ul {
 	font-size: 13px;
 	padding: 8px 4px;
 }
+.index {
+	width: 60px;
+}
+.lastUl li a {
+	width: 100px;
+}
+.lastIndex {
+	position: relative;
+	left: -30px;
+	width: 50px !important;
+}
 .nombres-largos {
 	width: 180px;
+}
+
+/* MENÚ LANZAPSS */
+.menu-lanzapps ul {
+	display: none;
+	position: absolute;
+}
+.menu-lanzapps:hover ul {
+	display: block;
+	top: 40px;
+	left: 650px;
+	z-index: 1;
+}
+.menu-lanzapps li a {
+	background-color: rgb(189, 9, 9);
+	text-decoration: none;
+	padding: 9px 8px;
+	display: block;
+	text-align: right;
+	/* cursor: default; */
+}
+.menu-lanzapps li a:hover {
+	background-color:#d83838;
+}
+.noDisabled {
+	color: #ffffff;
+}
+.disabledLanzapps {
+	pointer-events: none;
+	color: grey;
+	cursor: default;
+}
+.sw {
+	width: 16px;
+	height: auto;
+	position: relative;
+	top: 4px;
+	margin-right: 3px;
 }
 /* TITULO */
 hr {
 	width: 80%;
 	margin: auto;
 	background-color: #ffffff;
+}
+hr:first-of-type {
+	margin-top: 50px;
 }
 h1 {
 	text-align: center;
@@ -133,7 +194,7 @@ h1 {
 .wrap {
 	width: 75%;
 	position: absolute;
-	top: 45%;
+	top: 43%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -166,7 +227,7 @@ h1 {
 	height: 20px;
 	border-radius: 20px 0 0 20px;
 	border: 3px solid #ffffff;
-	border-right:  1px solid #ffffff;
+	border-right:  4px solid #ffffff;
 	outline: none;
 	color: #ffffff;
 }
@@ -224,7 +285,7 @@ h1 {
 	margin-left: 15px;
 }
 .switch:first-of-type {
-	margin-top: 220px;
+	margin-top: 230px;
 }
 .switch p {
 	position: relative;
