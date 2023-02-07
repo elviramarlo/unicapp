@@ -1,11 +1,13 @@
 {
-  "name": "unicapp-electronapp",
+  "name": "unicapp",
   "version": "1.0.0",
   "description": "unicapp",
   "main": "main.js",
   "scripts": {
     "test": "testt",
-    "start": "electron ."
+    "start": "electron .",
+	"pack": "electron-builder --dir",
+	"dist": "electron-builder --win=portable"
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,50 @@
   "author": "elvira",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^22.0.3"
+    "electron": "^22.0.3",
+	"electron-builder": "^22.10.3"
+  },
+  "dependencies": {
+  },
+  "build": {
+    "appId": "com.unicapp",
+    "productName": "Unicapp",
+    "copyright": "",
+    "mac": {
+      "target": [
+        "zip"
+      ],
+      "publish": [
+        "github"
+      ]
+    },
+    "win": {
+      "publisherName": "Unicapp",
+      "publish": [
+        "github"
+      ],
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "tar.gz"
+      ]
+    },
+    "dmg": {
+      "icon": "build/icon.icns"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "elvira",
+        "repo": "unicapp",
+        "vPrefixedTagName": true,
+        "private": true,
+        "releaseType": "draft"
+      }
+    ]
   }
 }

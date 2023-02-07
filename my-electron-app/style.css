@@ -2,6 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	font-weight: normal;
+	user-select: none;
 }
 body {
 	background-color: rgb(189, 9, 9);
