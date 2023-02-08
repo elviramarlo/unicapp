@@ -14,7 +14,7 @@ body {
 button, input, a, label, ul, li, div {
 	-webkit-app-region: no-drag;
 }
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
 }
 .bold {
@@ -93,15 +93,15 @@ ul {
 .nav > li {
 	float: left;
 }
-.nav li a {
+.nav li a, .nav li p {
 	background-color: rgb(189, 9, 9);
 	color: #ffffff;
 	text-decoration: none;
 	padding: 9px 8px;
 	display: block;
-	/* cursor: default; */
-}
-.nav li a:hover {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}	
+.nav li a:hover, .nav li p:hover {
 	background-color:#d83838;
 }
 .nav li ul {
@@ -119,10 +119,21 @@ ul {
 .nav li ul li ul {
 	left: 140px;
 	top: 0px;
+	z-index: 3;
+}
+.nav li ul li a {
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, 
+				rgba(0, 0, 0, 0.07) 0px 2px 4px,
+				rgba(0, 0, 0, 0.07) 0px 4px 8px,
+				rgba(0, 0, 0, 0.07) 0px 8px 16px,
+				rgba(0, 0, 0, 0.07) 0px 16px 32px,
+				rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 .nav li ul li ul li a {
 	font-size: 13px;
 	padding: 8px 4px;
+	cursor: pointer;
+	pointer-events: all;
 }
 .index {
 	width: 60px;
@@ -132,8 +143,9 @@ ul {
 }
 .lastIndex {
 	position: relative;
-	left: -30px;
+	left: -32px;
 	width: 50px !important;
+	overflow: hidden;
 }
 .nombres-largos {
 	width: 180px;
@@ -156,7 +168,8 @@ ul {
 	padding: 9px 8px;
 	display: block;
 	text-align: right;
-	/* cursor: default; */
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	cursor: default;
 }
 .menu-lanzapps li a:hover {
 	background-color:#d83838;
@@ -245,7 +258,22 @@ h1 {
 	border-top: none;
 	z-index: 2;
 	color: rgb(189, 9, 9);
+	width: 550px;
+	max-height: 197px;
+	overflow-y: auto;
 }  
+
+*::-webkit-scrollbar {
+    width: 14px;
+}
+*::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(189, 9, 9);
+    border-radius: 10px;
+    border: 3px double #ffffff;
+}
 .autocomplete-items div {
 	padding: 10px;
 	cursor: pointer;

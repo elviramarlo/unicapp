@@ -13,6 +13,9 @@ function autocomplete(inp, arr) {
 		currentFocus = -1;
 		/*create a DIV element that will contain the items (values):*/
 		a = document.createElement("DIV");
+		/* a.style.width="550px";
+		a.style.maxHeight="197px";
+		a.style.overflowY="scroll"; */
 		a.setAttribute("id", this.id + "autocomplete-list");
 		a.setAttribute("class", "autocomplete-items");
 		/*append the DIV element as a child of the autocomplete container:*/
