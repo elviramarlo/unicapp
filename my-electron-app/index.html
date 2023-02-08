@@ -13,7 +13,7 @@
 	<div class="barra-iconos">
 		<div class="menu">
 			<button class="icon-menu" onclick="showMenu()"><img class="img-menu" src="imgs/menu-4-xxl.png" alt=""></button>
-			<div id="header">
+			<div id="header" >
 				<ul class="nav">
 					<li><p class="bold" href="">GENERAL</p>
 						<ul>
@@ -95,12 +95,12 @@
 							</ul></li>
 							<li><p>UTILITATS</p>
 								<ul>
-									<li><a onclick="findFolder('Restaurar configuració')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Restaurar configuració</a></li>
-									<li><a onclick="findFolder('Reemplaça cargolam')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Reemplaça cargolam</a></li>
-									<li><a onclick="findFolder('Actualitzar Format')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Actualitzar Format</a></li>
-									<li><a onclick="findFolder('Llista de materials')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Llista de materials</a></li>
-									<li><a onclick="findFolder('Imprimir Conjunt')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Imprimir Conjunt</a></li>
-									<li><a onclick="findFolder('Sld To Tot')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Sld To Tot</a></li>
+									<li><a onclick="findFolder('[SW] Restaurar configuració')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Restaurar configuració</a></li>
+									<li><a onclick="findFolder('[SW] Reemplaça cargolam')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Reemplaça cargolam</a></li>
+									<li><a onclick="findFolder('[SW] Actualitzar Format')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Actualitzar Format</a></li>
+									<li><a onclick="findFolder('[SW] Llista de materials')" class="nombres-largos disabledPDM"><img class="sw" src="imgs/sw_blanco.png" alt=""> Llista de materials</a></li>
+									<li><a onclick="findFolder('[SW] Imprimir Conjunt')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Imprimir Conjunt</a></li>
+									<li><a onclick="findFolder('[SW] Sld To Tot')" class="nombres-largos"><img class="sw" src="imgs/sw_blanco.png" alt=""> Sld To Tot</a></li>
 									<li><a onclick="findFolder('Estandarització detectors')" class="nombres-largos">Estandarització detectors</a></li>
 									<li><a onclick="findFolder('Contactes AMES-CMA')" class="nombres-largos">Contactes AMES-CMA</a></li>
 									<li><a onclick="findFolder('Esborrar temporals')" class="nombres-largos">Esborrar temporals</a></li>
@@ -162,7 +162,7 @@
 							<li><p>DOCUMENTACIÓ</p>
 								<ul class="lastUl">
 									<li><a onclick="findFolder('Fotos')">Fotos</a></li>
-									<li><a onclick="findFolder('Ppublicacions')">Publicacions</a></li>
+									<li><a onclick="findFolder('Publicacions')">Publicacions</a></li>
 									<li><a onclick="findFolder('Maquinaria')">Maquinaria</a></li>
 									<li><a onclick="findFolder('Procediments')" class="disabledPDM">Procediments</a>
 										<ul>
@@ -179,7 +179,7 @@
 			</div>
 		</div>
 		<div>
-			<button class="info"><img src="imgs/info_circulo_blanco.png" alt=""></button>
+			<button class="info" onclick="openFolder('J:\\altres\\utilitats\\unicapp_manual.pdf')"><img src="imgs/info_circulo_blanco.png" alt=""></button>
 			<div class="menu-lanzapps">
 				<button class="lanzapps"><img src="imgs/rayo_circulo_blanco.png" alt=""></button>
 				<ul class="list-lanzapps">
@@ -199,37 +199,39 @@
 			<button onclick="minimize()" class="minimize"><p>&#95;</p></button>
 		</div>
 	</div>
-	<!-- TITULO -->
-	<div class="titulo">
-		<hr>
-		<h1>UNICAPP</h1>
-		<hr>
-	</div>
-	<!-- BARRA DE BÚSQUEDA -->
-	<div class="wrap">
-		<h2>Search</h2>
-		<div class="search">
-			<div class="autocomplete">
-				<input id="myInput" type="text" onkeyup="onKeyUp(event)" placeholder="Search">
-			</div>
-			<button class="boton-busqueda" id="botBusq">
-				<img src="imgs/search.png" alt="search">
-			</button>
+	<main id="principal">
+		<!-- TITULO -->
+		<div class="titulo" id="title">
+			<hr>
+			<h1>UNICAPP</h1>
+			<hr>
 		</div>
-	</div>
-	<!-- BOTONES SWITCH -->
-	<label for="PDM-switch" class="switch">
-		<input type="checkbox" id="PDM-switch" checked onclick="changeSwitchValue('#PDM-switch', 'disabledPDM')">
-		<span class="slider round"></span>
-		<p>PDM</p>
-	</label>
-	<br>
-	<label for="lanzapps-switch" class="switch">
-		<input type="checkbox" id="lanzapps-switch" onclick="changeSwitchValue('#lanzapps-switch', 'disabledLanzapps')">
-		<span class="slider round"></span>
-		<p>Lanzapps</p>
-	</label>
-	<script src="search.js"></script>
+		<!-- BARRA DE BÚSQUEDA -->
+		<div class="wrap" id="search">
+			<h2>Search</h2>
+			<div class="search">
+				<div class="autocomplete">
+					<input id="myInput" type="text" onkeyup="onKeyUp(event)" placeholder="Search">
+				</div>
+				<button class="boton-busqueda" id="botBusq">
+					<img src="imgs/search.png" alt="search">
+				</button>
+			</div>
+		</div>
+		<!-- BOTONES SWITCH -->
+		<label for="PDM-switch" class="switch">
+			<input type="checkbox" id="PDM-switch" checked onclick="changeSwitchValue('#PDM-switch', 'disabledPDM')">
+			<span class="slider round"></span>
+			<p>PDM</p>
+		</label>
+		<br>
+		<label for="lanzapps-switch" class="switch">
+			<input type="checkbox" id="lanzapps-switch" onclick="changeSwitchValue('#lanzapps-switch', 'disabledLanzapps')">
+			<span class="slider round"></span>
+			<p>Lanzapps</p>
+		</label>
+	</main>
 	<script src="index.js"></script>
+	<script src="search.js"></script>
   </body>
 </html>

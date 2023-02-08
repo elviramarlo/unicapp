@@ -1,9 +1,26 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
+
+let win = null;
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    if (win) {
+      if (win.isMinimized()) win.restore()
+      win.focus()
+    }
+  })
+  app.whenReady().then(() => {
+	createWindow()
+  })
+}
 
 const createWindow = () => {
-	const win = new BrowserWindow({
-    	width: 870,
-    	height: 460,
+	win = new BrowserWindow({
+		width: 870,
+		height: 460,
 		resizable: false,
 		frame: false,
 		autoHideMenuBar: true,
@@ -32,10 +49,7 @@ const createWindow = () => {
 	});
 }
 
-app.whenReady().then(() => {
-  createWindow()
-})
-
 app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') app.quit()
+	if (process.platform !== 'darwin')
+		app.quit()
 })

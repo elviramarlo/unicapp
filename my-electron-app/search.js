@@ -1,7 +1,4 @@
-/* b.style.pointerEvents="none"; */
-
-/*the autocomplete function takes two arguments,
-the text field element and an array of possible autocompleted values:*/
+/*two arguments, the text field element and an array of possible autocompleted values:*/
 function autocomplete(inp, arr) {
 	var currentFocus;
 	/*execute a function when someone writes in the text field:*/
@@ -13,16 +10,12 @@ function autocomplete(inp, arr) {
 		currentFocus = -1;
 		/*create a DIV element that will contain the items (values):*/
 		a = document.createElement("DIV");
-		/* a.style.width="550px";
-		a.style.maxHeight="197px";
-		a.style.overflowY="scroll"; */
 		a.setAttribute("id", this.id + "autocomplete-list");
 		a.setAttribute("class", "autocomplete-items");
 		/*append the DIV element as a child of the autocomplete container:*/
 		this.parentNode.appendChild(a);
 		/*for each item in the array...*/
 		for (i = 0; i < arr.length; i++) {
-
 			let myArray = arr[i].split(" ");
 			for (let j = 0; j < myArray.length; j++)
 			{
@@ -48,7 +41,6 @@ function autocomplete(inp, arr) {
 					b.style.pointerEvents="none";
 					b.style.color="grey";
 				}
-
 				/*execute a function when someone clicks on the item value (DIV element):*/
 				b.addEventListener("click", function(e) {
 					/*insert the value for the autocomplete text field:*/
@@ -61,7 +53,6 @@ function autocomplete(inp, arr) {
 			}
 		}
 	});
-
 	/*execute a function presses a key on the keyboard:*/
 	inp.addEventListener("keydown", function(e) {
 		var x = document.getElementById(this.id + "autocomplete-list");
