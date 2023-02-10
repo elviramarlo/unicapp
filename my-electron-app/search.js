@@ -12,7 +12,7 @@ function removeAccents(text) {
 	  ÙÚÛÜ: "U",  
 	  '´': " "
 	};
-	// Devuelve un valor si 'letter' está incluído en la clave
+	// Devuelve un valor si 'letter' está incluido en la clave
 	function getLetterReplacement(letter, replacements) {
 		const findKey = Object.keys(replacements).reduce(
 		  (origin, item, index) => (item.includes(letter) ? item : origin),
@@ -27,7 +27,6 @@ function removeAccents(text) {
 /*two arguments, the text field element and an array of possible autocompleted values:*/
 function autocomplete(inp, arr) {
 	var currentFocus;
-	
 	/*execute a function when someone writes in the text field:*/
 	inp.addEventListener("input", function(e) {
 		var a, b, i, val = this.value;
@@ -43,21 +42,11 @@ function autocomplete(inp, arr) {
 		this.parentNode.appendChild(a);
 		/*for each item in the array...*/
 		for (i = 0; i < arr.length; i++) {
-			let myArray = arr[i].split(" ");
-
-			let whitoutAccent = [];
-			for (let l = 0; l < myArray.length; l++) {
-				whitoutAccent[l] = removeAccents(myArray[l]);
-			}
-			for (let j = 0; j < myArray.length; j++)
-			{
+			let valUpper = val.toUpperCase();
+			let arrUpper = arr[i].toUpperCase();
+			let arrWhitoutAccent = removeAccents(arrUpper);
 			/*check if the item starts with the same letters as the text field value:*/
-			if ((myArray[j].substr(0, val.length).toUpperCase() == val.toUpperCase() 
-					&& (j == 0 || ((j > 0 && myArray[0][0] != myArray[1][0].toUpperCase())))
-					&& ( j != 2|| ((j == 2 && myArray[0][0] != myArray[2][0].toUpperCase()))))
-					|| (whitoutAccent[j].substr(0, val.length).toUpperCase() == val.toUpperCase() 
-					&& (j == 0 || ((j > 0 && whitoutAccent[0][0] != whitoutAccent[1][0].toUpperCase())))
-					&& ( j != 2|| ((j == 2 && whitoutAccent[0][0] != whitoutAccent[2][0].toUpperCase()))) )) {
+			if (arrUpper.includes(valUpper) || arrWhitoutAccent.includes(valUpper)) {
 				/*create a DIV element for each matching element:*/
 				b = document.createElement("DIV");
 				/*make the matching letters bold:*/
@@ -65,7 +54,6 @@ function autocomplete(inp, arr) {
 				b.innerHTML += arr[i].substr(val.length);
 				/*insert a input field that will hold the current array item's value:*/
 				b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-
 				if (!checkSwitch('#PDM-switch') && (arr[i] == 'Documentació projectes' || arr[i] == 'Gediva Generator' || arr[i] == 'Procediments' || arr[i] == 'Peticions per LDM' || arr[i] == 'Precodificats' || arr[i] == 'Codificats' || arr[i] == 'Normalitzats' || arr[i] == 'Peces AMES' || arr[i] == 'Plantilla carpetes projecte' || arr[i] == '24 - Elem. de manipulació' || arr[i] == '[SW] Restaurar configuració' || arr[i] == '[SW] Reemplaça cargolam' || arr[i] == '[SW] Llista de materials'))
 				{
 					b.style.pointerEvents="none";
@@ -84,7 +72,6 @@ function autocomplete(inp, arr) {
 					closeAllLists();
 				});
 				a.appendChild(b);
-			}
 			}
 		}
 	});
@@ -107,11 +94,11 @@ function autocomplete(inp, arr) {
 		  e.preventDefault();
 		  if (currentFocus > -1) {
 			/*and simulate a click on the "active" item:*/
-			if (x) x[currentFocus].click();
+			if (x)
+				x[currentFocus].click();
 		  }
 		}
 	});
-
 	function addActive(x) {
 		/*a function to classify an item as "active":*/
 		if (!x) return false;
@@ -121,6 +108,7 @@ function autocomplete(inp, arr) {
 		if (currentFocus < 0) currentFocus = (x.length - 1);
 		/*add class "autocomplete-active":*/
 		x[currentFocus].classList.add("autocomplete-active");
+		x[currentFocus].scrollIntoView();
 	}
 	function removeActive(x) {
 	/*a function to remove the "active" class from all autocomplete items:*/
@@ -226,5 +214,5 @@ var elements = ["Normes i seguretat",
 "Entrada albarans"
 ];
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+/*initiate the autocomplete function on the "myInput" element, and pass along the array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), elements);

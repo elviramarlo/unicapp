@@ -3,13 +3,13 @@
 	padding: 0px;
 	font-weight: normal;
 	user-select: none;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-	-webkit-app-region: drag; /* xq no funciona arriba del todo */
 	background-color: rgb(189, 9, 9);
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 14px;
 	color: #ffffff;
+	-webkit-app-region: drag; /* xq no funciona arriba del todo */
 }
 button, input, a, label, ul, li, .nav, p, .autocomplete-items, .header {
 	-webkit-app-region: no-drag;
@@ -67,15 +67,18 @@ body::-webkit-scrollbar {
 }
 .cerrar {
 	left: 95%;
+}
+.cerrar p {
 	font-size: 40px;
+	margin-top: -10px;
 }
 .minimize {
 	left: 90%;
 }
-.minimize p {
-	font-size: 30px;
+.minimize p{
+	font-size: 40px;
 	font-weight: bold;
-	margin-top: -25px;
+	margin-top: -40px;
 }
 .info:hover, .lanzapps:hover, .cerrar:hover, .minimize:hover, .icon-menu:hover {
 	background-color:#d83838;
@@ -200,7 +203,7 @@ hr {
 	background-color: #ffffff;
 }
 hr:first-of-type {
-	margin-top: 50px;
+	margin-top: 60px;
 }
 h1 {
 	text-align: center;
@@ -212,7 +215,7 @@ h1 {
 .wrap {
 	width: 75%;
 	position: absolute;
-	top: 43%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -266,7 +269,6 @@ h1 {
 	max-height: 197px;
 	overflow-y: auto;
 }  
-
 *::-webkit-scrollbar {
     width: 14px;
 }
@@ -318,7 +320,7 @@ h1 {
 	margin-left: 15px;
 }
 .switch:first-of-type {
-	margin-top: 235px;
+	margin-top: 230px;
 }
 .switch p {
 	position: relative;
