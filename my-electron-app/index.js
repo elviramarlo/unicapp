@@ -1,6 +1,12 @@
 const { ipcRenderer, shell } = require('electron');
 const fs = require('fs');
 /* const { fstat } = require('original-fs'); */
+const { exec } = require('child_process');
+
+function apagarPC()
+{
+	exec('shutdown /s');
+}
 
 /* BOTONES MINIMIZAR, CERRAR Y MENSAJE DE ALERTA */
 function minimize() {
@@ -24,9 +30,9 @@ function checkSwitch(string) /* checkea si está activado o no */
 
 function changeSwitchValue(string, string2)
 {
+	const elements = document.getElementsByClassName(string2);
 	if (!checkSwitch(string))
 	{
-		const elements = document.getElementsByClassName(string2);
 		for (let i = 0; i < elements.length; i++)
 		{
 			elements[i].style.color="grey";
@@ -36,7 +42,6 @@ function changeSwitchValue(string, string2)
 	}
 	else
 	{
-		const elements = document.getElementsByClassName(string2);
 		if (string == "#lanzapps-switch")
 			messageBox("El departamento de informática recomienda no utilizar las aplicaciones de Lanzapps desde esta aplicación.\nSu uso y posibles problemas derivados son responsabilidad del usuario.");
 		for (let i = 0; i < elements.length; i++)
@@ -68,9 +73,9 @@ function openFolderPDM(enabled, disabled) /* abre directorios diferentes según 
 /* ENVIAR EMAILS */
 function sendEmailTicket()
 {
-	let subj = '[Ticket] Título de tu incidencia o solicitud';
-	let saltoLinea = '%0D%0A';
-	let body = 'URGENCIA (estándar o urgente -si no puedes trabajar-): ' + saltoLinea + 
+	const subj = '[Ticket] Título de tu incidencia o solicitud';
+	const saltoLinea = '%0D%0A';
+	const body = 'URGENCIA (estándar o urgente -si no puedes trabajar-): ' + saltoLinea + 
 				'DESCRIPCIÓN (cuanto más detallada mejor, puedes adjuntar imágenes o cualquier otro documento): '
 				+ saltoLinea + saltoLinea;
 	shell.openExternal('mailto:adrian.rodriguez@ames.group?subject='+subj+'&body='+body);
@@ -78,44 +83,44 @@ function sendEmailTicket()
 
 function sendEmailSala()
 {
-	let subj = 'Reserva sala de reunions';
-	let saltoLinea = '%0D%0A';
-	let body = 'TIPO DE SALA (grande o pequeña): ' + saltoLinea + 
+	const subj = 'Reserva sala de reunions';
+	const saltoLinea = '%0D%0A';
+	const body = 'TIPO DE SALA (grande o pequeña): ' + saltoLinea + 
 	'RAZÓN (reunión de círculo, visita comercial...): ' + saltoLinea +
 	'DÍA: ' + saltoLinea + 'HORA INICIO: ' + saltoLinea + 'HORA FINAL: ' + saltoLinea + saltoLinea ;
 	shell.openExternal('mailto:adrian.rodriguez@ames.group?subject='+subj+'&body='+body);
 }
 
 /* CERRAR O ABRIR EL MENÚ AL PULSAR EN EL ICONO */
-var menuOpen = 0;
+let menuOpen = 0;
 function showMenu()
 {
-	var elem = document.getElementById("header");
+	const elem = document.getElementById("header");
 	if (menuOpen == 0) {
 		elem.style.display="inline";
 		menuOpen = 1;
-		var title = document.getElementById("principal");
+		const title = document.getElementById("principal");
 		title.classList.add("no-drag");
 	}
 	else {
 		elem.style.display="none";
 		menuOpen = 0;
-		var title = document.getElementById("principal");
+		const title = document.getElementById("principal");
 		title.classList.remove("no-drag");
 	}
 }
-let body = document.getElementById("principal");
+const body = document.getElementById("principal");
 body.addEventListener("click", () => {
 	if (menuOpen == 1)
 		showMenu();
 });
 
 /* RECOGER EL VALOR DEL INPUT PULSANDO EL BOTÓN O ENTER */
-var boton = document.getElementById("botBusq");
+const boton = document.getElementById("botBusq");
 boton.addEventListener("click", () => {
 
-  var input = document.getElementById("myInput");
-  var value = input.value;
+  const input = document.getElementById("myInput");
+  const value = input.value;
   input.value='';
   findFolder(value);
   
@@ -124,8 +129,8 @@ boton.addEventListener("click", () => {
 /* funciona pulsando enter en general */
 document.addEventListener("keyup", function(event) {
     if (event.code === 'Enter') {
-        var input = document.getElementById("myInput");
-		var value = input.value;
+        const input = document.getElementById("myInput");
+		const value = input.value;
 		input.value='';
         findFolder(value);
     }

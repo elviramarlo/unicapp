@@ -1,6 +1,33 @@
+function removeAccents(text) {
+	const sustitutions = {
+	  àáâãäå: "a",
+	  ÀÁÂÃÄÅ: "A",
+	  èéêë: "e",
+	  ÈÉÊË: "E",
+	  ìíîï: "i",
+	  ÌÍÎÏ: "I",
+	  òóôõö: "o",
+	  ÒÓÔÕÖ: "O",
+	  ùúûü: "u",
+	  ÙÚÛÜ: "U",  
+	  '´': " "
+	};
+	// Devuelve un valor si 'letter' está incluído en la clave
+	function getLetterReplacement(letter, replacements) {
+		const findKey = Object.keys(replacements).reduce(
+		  (origin, item, index) => (item.includes(letter) ? item : origin),
+		  false
+		);
+		return findKey !== false ? replacements[findKey] : letter;
+	}
+	// Recorre letra por letra en busca de una sustitución
+	return text.split("").map((letter) => getLetterReplacement(letter, sustitutions)).join("");
+}
+
 /*two arguments, the text field element and an array of possible autocompleted values:*/
 function autocomplete(inp, arr) {
 	var currentFocus;
+	
 	/*execute a function when someone writes in the text field:*/
 	inp.addEventListener("input", function(e) {
 		var a, b, i, val = this.value;
@@ -17,12 +44,20 @@ function autocomplete(inp, arr) {
 		/*for each item in the array...*/
 		for (i = 0; i < arr.length; i++) {
 			let myArray = arr[i].split(" ");
+
+			let whitoutAccent = [];
+			for (let l = 0; l < myArray.length; l++) {
+				whitoutAccent[l] = removeAccents(myArray[l]);
+			}
 			for (let j = 0; j < myArray.length; j++)
 			{
 			/*check if the item starts with the same letters as the text field value:*/
-			if (myArray[j].substr(0, val.length).toUpperCase() == val.toUpperCase() 
-				&& (j == 0 || ((j > 0 && myArray[0][0] != myArray[1][0].toUpperCase())))
-					&& ( j != 2|| ((j == 2 && myArray[0][0] != myArray[2][0].toUpperCase())))) {
+			if ((myArray[j].substr(0, val.length).toUpperCase() == val.toUpperCase() 
+					&& (j == 0 || ((j > 0 && myArray[0][0] != myArray[1][0].toUpperCase())))
+					&& ( j != 2|| ((j == 2 && myArray[0][0] != myArray[2][0].toUpperCase()))))
+					|| (whitoutAccent[j].substr(0, val.length).toUpperCase() == val.toUpperCase() 
+					&& (j == 0 || ((j > 0 && whitoutAccent[0][0] != whitoutAccent[1][0].toUpperCase())))
+					&& ( j != 2|| ((j == 2 && whitoutAccent[0][0] != whitoutAccent[2][0].toUpperCase()))) )) {
 				/*create a DIV element for each matching element:*/
 				b = document.createElement("DIV");
 				/*make the matching letters bold:*/
@@ -193,4 +228,3 @@ var elements = ["Normes i seguretat",
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), elements);
-

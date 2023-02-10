@@ -6,8 +6,8 @@
   "scripts": {
     "test": "testt",
     "start": "electron .",
-	"pack": "electron-builder --dir",
-	"dist": "electron-builder --win=portable"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win=portable"
   },
   "repository": {
     "type": "git",
@@ -17,13 +17,15 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^22.0.3",
-	"electron-builder": "^22.10.3"
+    "electron-builder": "^22.10.3"
   },
   "dependencies": {
+    "v8-compile-cache": "^2.3.0"
   },
   "build": {
     "appId": "com.unicapp",
     "productName": "Unicapp",
+	"compression": "maximum",
     "copyright": "",
     "mac": {
       "target": [

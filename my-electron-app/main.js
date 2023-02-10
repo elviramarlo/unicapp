@@ -5,7 +5,8 @@ const gotTheLock = app.requestSingleInstanceLock();
 
 if (!gotTheLock) {
   app.quit()
-} else {
+}
+else {
   app.on('second-instance', (event, commandLine, workingDirectory) => {
     if (win) {
       if (win.isMinimized()) win.restore()
@@ -16,11 +17,10 @@ if (!gotTheLock) {
 	createWindow()
   })
 }
-
 const createWindow = () => {
 	win = new BrowserWindow({
-		width: 870,
 		height: 460,
+		width: 870,
 		resizable: false,
 		frame: false,
 		autoHideMenuBar: true,
