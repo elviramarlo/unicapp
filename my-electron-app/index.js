@@ -210,8 +210,6 @@ function findFolder(string)
 		openFolder('J:\\llibreries\\mecanics\\palette parts');
 	else if (string == "Peces AMES")
 		openFolder('D:\\AMES-CMA\\Llibreries\\PecesSint');
-	else if (string == "Plantilla carpetes projecte")
-		openFolder('D:\\AMES-CMA\\00_DocProj\\PlantillaEstructura');
 	else if (string == "03 - Premses")
 		openFolderPDM('D:\\AMES-CMA\\03_Premses', 'J:\\projectes\\mecanics\\premses')
 	else if (string == "04 - Forns")

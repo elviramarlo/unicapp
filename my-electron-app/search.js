@@ -68,6 +68,8 @@ function autocomplete(inp, arr) {
 				b.addEventListener("click", function(e) {
 					/*insert the value for the autocomplete text field:*/
 					inp.value = this.getElementsByTagName("input")[0].value;
+					findFolder(inp.value);
+					inp.value='';
 					/*close the list of autocompleted values, (or any other open lists of autocompleted values:*/
 					closeAllLists();
 				});
@@ -78,7 +80,8 @@ function autocomplete(inp, arr) {
 	/*execute a function presses a key on the keyboard:*/
 	inp.addEventListener("keydown", function(e) {
 		var x = document.getElementById(this.id + "autocomplete-list");
-		if (x) x = x.getElementsByTagName("div");
+		if (x)
+			x = x.getElementsByTagName("div");
 		if (e.keyCode == 40) {
 			/*If the arrow DOWN key is pressed, increase the currentFocus variable:*/
 			currentFocus++;
@@ -101,14 +104,18 @@ function autocomplete(inp, arr) {
 	});
 	function addActive(x) {
 		/*a function to classify an item as "active":*/
-		if (!x) return false;
+		if (!x)
+			return false;
 		/*start by removing the "active" class on all items:*/
 		removeActive(x);
-		if (currentFocus >= x.length) currentFocus = 0;
-		if (currentFocus < 0) currentFocus = (x.length - 1);
+		if (currentFocus >= x.length)
+			currentFocus = 0;
+		if (currentFocus < 0)
+			currentFocus = (x.length - 1);
 		/*add class "autocomplete-active":*/
-		x[currentFocus].classList.add("autocomplete-active");
-		x[currentFocus].scrollIntoView();
+		if (x[currentFocus].style.color!="grey")
+			x[currentFocus].classList.add("autocomplete-active");
+		x[currentFocus].scrollIntoView({block: "nearest"});
 	}
 	function removeActive(x) {
 	/*a function to remove the "active" class from all autocomplete items:*/
@@ -159,7 +166,6 @@ var elements = ["Normes i seguretat",
 "Normalitzats",
 "Palette parts",
 "Peces AMES",
-"Plantilla carpetes projecte",
 "03 - Premses",
 "04 - Forns",
 "05 - Automatismes",
