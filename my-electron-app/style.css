@@ -316,14 +316,17 @@ h1 {
 /* BOTONES SWITCH */
 /* The switch - the box around the slider */
 .switch {
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	width: 45px;
 	height: 25px;
 	margin-left: 15px;
 }
 .switch:first-of-type {
-	margin-top: 230px;
+	top: 83%;
+}
+.switch:last-of-type {
+	top: 90%;
 }
 .switch p {
 	position: relative;

@@ -22,6 +22,9 @@ const createWindow = () => {
 		height: 460,
 		width: 870,
 		resizable: false,
+		maximizable: false,
+		fullscreen: false,
+		fullscreenable: false,
 		frame: false,
 		autoHideMenuBar: true,
 		webPreferences: {

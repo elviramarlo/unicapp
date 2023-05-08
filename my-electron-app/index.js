@@ -61,11 +61,22 @@ function openFolder(string)
 	else
 		messageBox("No se tiene acceso a " + string);
 }
+const path1 = 'D:\\AMES-CMA';
+const path2 = 'C:\\Users\\Public\\AMES-CMA';
+function openFolderAMESCMA(string, string2, path)
+{
+	if (fs.existsSync(string + path))
+		shell.openPath(string + path);
+	else if (fs.existsSync(string2 + path))
+		shell.openPath(string2 + path)
+	else
+		messageBox("No se tiene acceso");
+}
 
 function openFolderPDM(enabled, disabled) /* abre directorios diferentes según esté activado o no */
 {
 	if (checkSwitch('#PDM-switch'))
-		openFolder(enabled);
+		openFolderAMESCMA(path1, path2, enabled);
 	else
 		openFolder(disabled);
 }
@@ -161,7 +172,7 @@ function findFolder(string)
 	else if (string == "Index coneixements")
 		openFolder('J:\\documentacio\\comu\\coneixements\\_index_coneixements.xlsm');
 	else if (string == "Documentació projectes")
-		openFolder('D:\\AMES-CMA\\00_DocProj');
+		openFolderAMESCMA(path1, path2, '\\00_DocProj');
 	else if (string == "Llistats projectes")
 		openFolder('I:\\cma\\comun\\llistats projectes');
 	else if (string == "Logos AMES")
@@ -173,7 +184,7 @@ function findFolder(string)
 	else if (string == "LoginScript")
 		openFolder('C:\\amesapps\\GENERAL\\LoginScript.lnk');
 	else if (string == "Gediva Generator")
-		openFolder('D:\\AMES-CMA\\00_DocProj\\02_Gediva\\gediva_generator_v2.xlsm');
+		openFolderAMESCMA(path1, path2, '\\00_DocProj\\02_Gediva\\gediva_generator_v2.xlsm');
 	else if (string == "Imprimir PDFs")
 		openFolder('J:\\altres\\utilitats\\imprimir_pdf.exe');
 	else if (string == "DirAMES")
@@ -201,41 +212,41 @@ function findFolder(string)
 	else if (string == "Nova idea de millora")
 		openFolder('J:\\documentacio\\mecanics\\idees de millora\\000_format_idees_multilingue_2018-07_macro.xlsm');
 	else if (string == "Precodificats")
-		openFolder('D:\\AMES-CMA\\Llibreries\\PreCodificats');
+		openFolderAMESCMA(path1, path2, '\\Llibreries\\PreCodificats');
 	else if (string == "Codificats")
-		openFolder('D:\\AMES-CMA\\Elements Normalitzats\\Codificats');
+		openFolderAMESCMA(path1, path2, '\\Elements Normalitzats\\Codificats');
 	else if (string == "Normalitzats")
-		openFolder('D:\\AMES-CMA\\Elements Normalitzats\\Norm');
+		openFolderAMESCMA(path1, path2, '\\Elements Normalitzats\\Norm');
 	else if (string == "Palette parts")
 		openFolder('J:\\llibreries\\mecanics\\palette parts');
 	else if (string == "Peces AMES")
-		openFolder('D:\\AMES-CMA\\Llibreries\\PecesSint');
+		openFolderAMESCMA(path1, path2, '\\Llibreries\\PecesSint');
 	else if (string == "03 - Premses")
-		openFolderPDM('D:\\AMES-CMA\\03_Premses', 'J:\\projectes\\mecanics\\premses')
+		openFolderPDM('\\03_Premses', 'J:\\projectes\\mecanics\\premses')
 	else if (string == "04 - Forns")
-		openFolderPDM('D:\AMES-CMA\\04_Forns', 'J:\\projectes\\mecanics\\forns')
+		openFolderPDM('\\04_Forns', 'J:\\projectes\\mecanics\\forns')
 	else if (string == "05 - Automatismes")
-		openFolderPDM('D:\\AMES-CMA\\05_Automat', 'J:\\projectes\\mecanics\\automat')
+		openFolderPDM('\\05_Automat', 'J:\\projectes\\mecanics\\automat')
 	else if (string == "24 - Elem. de manipulació")
-		openFolderPDM('D:\\AMES-CMA\\24_Elements Manutencio', 'J:\\projectes\\mecanics\\24')
+		openFolderPDM('\\24_Elements Manutencio', 'J:\\projectes\\mecanics\\24')
 	else if (string == "55 - Dissenys estàndard")
-		openFolderPDM('D:\\AMES-CMA\\55_Dissenys Estandard', 'J:\\projectes\\mecanics\\55')
+		openFolderPDM('\\55_Dissenys Estandard', 'J:\\projectes\\mecanics\\55')
 	else if (string == "[SW] Restaurar configuració")
-		openFolder('D:\\AMES-CMA\\SldWorks20\\Config\\restaurar_configuracion.bat');
+		openFolderAMESCMA(path1, path2, '\\SldWorks20\\Config\\restaurar_configuracion.bat');
 	else if (string == "[SW] Reemplaça cargolam")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\ReemplaComponents.exe');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ReemplaComponents.exe');
 	else if (string == "[SW] Actualitzar Format")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\ActFormat.exe');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ActFormat.exe');
 	else if (string == "[SW] Llista de materials")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\LDM.exe');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\LDM.exe');
 	else if (string == "[SW] Imprimir Conjunt")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\ImprimirConjunt.exe');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ImprimirConjunt.exe');
 	else if (string == "[SW] Sld To Tot")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\SldToTot.exe');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\SldToTot.exe');
 	else if (string == "Estandarització detectors")
 		openFolder('J:\\documentacio\\comu\\catalegs pdf\\detectors\\estandaritzacio_detectors.xlsx');
 	else if (string == "Contactes AMES-CMA")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\ContactesAMES-CMA.exe');
+		openFolderAMESCMA(path1, path2,'\\Varis\\Soft\\ContactesAMES-CMA.exe');
 	else if (string == "Esborrar temporals")
 		openFolder('J:\\altres\\utilitats\\eliminarfitxersbigotis.xlsm');
 	else if (string == "Elèctrics Documentació")
@@ -269,7 +280,7 @@ function findFolder(string)
 	else if (string == "Magatzem")
 		openFolder('I:\\cma\\comun\\magatzem');
 	else if (string == "Petitions per LDM")
-		openFolder('D:\\AMES-CMA\\Varis\\Soft\\ldm_a_gestio\\data\\peticio_per_ldm.xlsm');
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ldm_a_gestio\\data\\peticio_per_ldm.xlsm');
 	else if (string == "Gestocs")
 		messageBox('Work in progress...')
 	else if (string == "Fotos")
@@ -279,7 +290,7 @@ function findFolder(string)
 	else if (string == "Maquinaria")
 		openFolder('J:\\documentacio\\comu\\maquinaria');
 	else if (string == "Procediments")
-		openFolder('D:\\AMES-CMA\\Procediments');
+		openFolderAMESCMA(path1, path2, '\\Procediments');
 	else if (string == "Index procediments")
 		openFolder('I:\\cma\\index_normes_cma.pdf');
 	else if (string == "Verificacions")
