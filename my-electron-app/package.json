@@ -20,12 +20,13 @@
     "electron-builder": "^22.10.3"
   },
   "dependencies": {
+    "electron-shell": "^0.0.1",
     "v8-compile-cache": "^2.3.0"
   },
   "build": {
     "appId": "com.unicapp",
     "productName": "Unicapp",
-	"compression": "maximum",
+    "compression": "maximum",
     "win": {
       "publisherName": "Unicapp",
       "publish": [

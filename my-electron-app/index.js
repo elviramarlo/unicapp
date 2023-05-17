@@ -3,6 +3,7 @@ const fs = require('fs');
 /* const { fstat } = require('original-fs'); */
 const { exec } = require('child_process');
 
+
 function apagarPC()
 {
 	exec('shutdown /s');
@@ -196,13 +197,13 @@ function findFolder(string)
 	else if (string == "Reiniciar Windows Explorer")
 		openFolder('J:\\altres\\utilitats\\putu_windows.bat');
 	else if (string == "Programar apagat PC")
-		messageBox('Work in progress...')
+		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Disoldre carpetes")
-		messageBox('Work in progress...')
+		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Endreçar arxius")
-		messageBox('Work in progress...')
+		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Canviar noms arxius")
-		messageBox('Work in progress...')
+		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Documentació general")
 		openFolder('J:\\documentacio\\mecanics');
 	else if (string == "Cercle OT-CMA")
@@ -246,7 +247,7 @@ function findFolder(string)
 	else if (string == "Estandarització detectors")
 		openFolder('J:\\documentacio\\comu\\catalegs pdf\\detectors\\estandaritzacio_detectors.xlsx');
 	else if (string == "Contactes AMES-CMA")
-		openFolderAMESCMA(path1, path2,'\\Varis\\Soft\\ContactesAMES-CMA.exe');
+		shell.openExternal('https://contacts.google.com/');
 	else if (string == "Esborrar temporals")
 		openFolder('J:\\altres\\utilitats\\eliminarfitxersbigotis.xlsm');
 	else if (string == "Elèctrics Documentació")
@@ -279,10 +280,12 @@ function findFolder(string)
 		openFolder('I:\\cma\\enviaments a plantes');
 	else if (string == "Magatzem")
 		openFolder('I:\\cma\\comun\\magatzem');
-	else if (string == "Petitions per LDM")
+	else if (string == "Logística")
+		openFolderAMESCMA(path1, path2, '\\Logistica');
+	else if (string == "Peticions per LDM")
 		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ldm_a_gestio\\data\\peticio_per_ldm.xlsm');
 	else if (string == "Gestocs")
-		messageBox('Work in progress...')
+		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Fotos")
 		openFolder('J:\\projectes\\fotos');
 	else if (string == "Publicacions")

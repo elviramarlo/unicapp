@@ -137,7 +137,6 @@ function autocomplete(inp, arr) {
 		closeAllLists(e.target);
 	});
   }
-  
 /*An array containing all the elements:*/
 var elements = ["Normes i seguretat",
 "Catàlegs",
@@ -195,7 +194,8 @@ var elements = ["Normes i seguretat",
 "Organigrames AMES",
 "Enviaments a plantes",
 "Magatzem",
-"Petitions per LDM",
+"Logística",
+"Peticions per LDM",
 "Gestocs",
 "Fotos",
 "Publicacions",
