@@ -284,6 +284,8 @@ function findFolder(string)
 		openFolderAMESCMA(path1, path2, '\\Logistica');
 	else if (string == "Peticions per LDM")
 		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\ldm_a_gestio\\data\\peticio_per_ldm.xlsm');
+		else if (string == "Peticions LDM PDM")
+		openFolderAMESCMA(path1, path2, '\\Varis\\Soft\\pdm_a_gestio\\data\\pdm_a_gestio.xlsm');
 	else if (string == "Gestocs")
 		messageBox('Aplicació no disponible, encara en desenvolupament.')
 	else if (string == "Fotos")

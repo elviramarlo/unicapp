@@ -20,7 +20,11 @@
     "electron-builder": "^22.10.3"
   },
   "dependencies": {
+    "@azure/cognitiveservices-translatortext": "^1.0.1",
+    "axios": "^1.4.0",
+    "deepl-translator": "^1.2.1",
     "electron-shell": "^0.0.1",
+    "mstranslator": "^3.0.0",
     "v8-compile-cache": "^2.3.0"
   },
   "build": {

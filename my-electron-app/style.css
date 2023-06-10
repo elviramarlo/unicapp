@@ -48,7 +48,7 @@ button {
 	margin-left: 5px;
 	margin-bottom: 20px;
 }
-.cerrar, .minimize, .lanzapps, .info {
+.cerrar, .minimize, .lanzapps, .info, .translate {
 	background-color: rgb(189, 9, 9);
 	width: 45px;
 	height: 45px;
@@ -58,10 +58,10 @@ button {
 	color: #ffffff;
 }
 .info {
-	left: 78.9%;
+	left: 79.9%;
 }
 .lanzapps {
-	left: 84.2%;
+	left: 84.9%;
 }
 .lanzapps img, .info img {
 	margin-top: 5px;
@@ -69,22 +69,41 @@ button {
 	height: auto;
 }
 .cerrar {
-	left: 94.7%;
+	left: 94.9%;
 }
 .cerrar p {
 	font-size: 40px;
 	margin-top: -10px;
 }
 .minimize {
-	left: 89.5%;
+	left: 89.9%;
 }
 .minimize p {
 	font-size: 42px;
 	font-weight: bold;
 	margin-top: -43px;
 }
-.info:hover, .lanzapps:hover, .cerrar:hover, .minimize:hover, .icon-menu:hover {
+.info:hover, .lanzapps:hover, .cerrar:hover, .minimize:hover, .icon-menu:hover, .translate:hover {
 	background-color:#d83838;
+}
+.translate {
+	left: 74.9%;
+	border: 1px solid white;
+	display: inline;
+}
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	left: 75%;
+	top: 45px;
+}
+.dropdown-menu li {
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, 
+				rgba(0, 0, 0, 0.07) 0px 2px 4px,
+				rgba(0, 0, 0, 0.07) 0px 4px 8px,
+				rgba(0, 0, 0, 0.07) 0px 8px 16px,
+				rgba(0, 0, 0, 0.07) 0px 16px 32px,
+				rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 /* MENÚ DESPLEGABLE */
 .menu { 
@@ -103,7 +122,7 @@ ul {
 .nav > li {
 	float: left;
 }
-.nav li a, .nav li p {
+li a, li p {
 	background-color: rgb(189, 9, 9);
 	color: #ffffff;
 	text-decoration: none;
@@ -111,7 +130,7 @@ ul {
 	display: block;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }	
-.nav li a:hover, .nav li p:hover {
+li a:hover, .li p:hover {
 	background-color:#d83838;
 }
 .nav li ul {
@@ -222,11 +241,6 @@ h1 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-.wrap h2 {
-	text-align: center;
-	margin-bottom: 10px;
-	letter-spacing: 2px;
-}
 .search {
 	width: 100%;
 	position: relative;
@@ -251,7 +265,7 @@ h1 {
 	height: 20px;
 	border-radius: 20px 0 0 20px;
 	border: 3px solid #ffffff;
-	border-right:  4px solid #ffffff;
+	border-right:  6px solid #ffffff;
 	outline: none;
 	color: #ffffff;
 }
